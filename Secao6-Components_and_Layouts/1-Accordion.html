@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Component</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+      type-scale.com
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+
+      /*
+      MAIN COLOR: #087f5b, #099268
+      GREY COLOR: #343a40, #868e96
+
+      */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+      .accordion {
+        width: 700px;
+        margin: 100px auto;
+        border-top: 4px solid #087f5b;
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+      }
+      .item {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        padding: 24px;
+      }
+      .item svg {
+        height: 24px;
+        width: 24px;
+        stroke: #087f5b;
+        margin-left: auto;
+      }
+      .number,
+      .text {
+        color: #087f5b;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      .number {
+        margin-right: 8px;
+      }
+      .box-hidden {
+        margin-left: 24px;
+        max-height: 0;
+        transition: max-height 1.5s;
+      }
+      .open {
+        max-height: 200px;
+        transition: max-height 0.3s ease;
+      }
+
+      .icon {
+        cursor: pointer;
+      }
+
+      .box-hidden p {
+        line-height: 1.6;
+        padding: 24px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        opacity: 0%;
+        transition: opacity 1s;
+      }
+
+      .open p {
+        opacity: 100%;
+        transition: opacity 1s;
+      }
+      .box-hidden ul {
+        color: #868e96;
+        margin-left: 20px;
+        padding: 24px;
+      }
+      .box-hidden li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        opacity: 0%;
+        transition: opacity 0.3s;
+      }
+      .open li {
+        opacity: 100%;
+        transition: opacity 1.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="item">
+        <div class="number">2</div>
+        <div class="text">How long do I have to return my chair?</div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
+      <div class="box-hidden">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tenetur
+          fugiat, incidunt enim minus dicta ad quisquam dolorum ducimus quos
+          unde dolor cupiditate velit quaerat. Autem sapiente sint beatae
+          possimus.
+        </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>
+            Nisi, doloremque illum vero quidem molestias facere corrupti hic
+            odio
+          </li>
+          <li>temporibus eos officia mollitia, dolore repellendus culpa!</li>
+          <li>Dolorum earum laborum accusamus nihil.</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const dropbox = document.querySelector(".box-hidden");
+      const icon = document.querySelector(".icon");
+
+      icon.addEventListener("click", function () {
+        dropbox.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
