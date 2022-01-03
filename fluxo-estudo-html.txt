@@ -2,3 +2,16 @@
 	- Para fazer aparecer e desaparecer:
 		- Com Javascript:
 			Rever aula 84 de Javascript
+
+- Carousel
+	- Fazer usando o sass
+	- position absolute para botoes (absolute precisa de um relative como referencia)
+	- transform: scale para aumentar tamanho
+	- transform: translate (x, y) para posicionar de forma absoluta nos dois eixos em relacao a si mesmo (50%)
+	- cursor: pointer nos botoes
+	- shadow nos botoes e na imagem
+	- dots no final - buttons com &nbsp representando espacos vazios
+	- dots devem ser posicionados de forma absoluta
+	- border radius: 50% (faz circulo )
+	- display flex de somente 1 elemento podemos utilizar propriedades como gap
+	- Quando aumentamos a escala da foto para nao estourar lateralmente aumentamos o padding do lado estourado
